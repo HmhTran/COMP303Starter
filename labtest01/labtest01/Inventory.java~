@@ -6,7 +6,7 @@ import java.util.HashMap;
  * Represents the inventory of a 
  * physical grocery store.
  */
-public class Inventory implements Iterable<Item>
+public class Inventory implements Iterable
 {
 	private final String aName; // Unique
 	private final HashMap<Item, Integer> aInventory = new HashMap<>();
@@ -55,7 +55,7 @@ public class Inventory implements Iterable<Item>
 	 */
 	public void dispose(Item pItem, int pQuantity)
 	{
-		assert aInventory.containsKey(pItem) && pQuantity >= aInventory.get(pItem);
+		assert aInventory.containsKey && pQuantity >= aInventory.get(pItem);
 
 		int amount = aInventory.get(pItem);
 		amount -= pQuantity;
@@ -78,18 +78,18 @@ public class Inventory implements Iterable<Item>
 		}
 	}
 
-	public Iterator<Item> iterator()
+	public Iterator getIterator()
 	{
-		return aInventory.keySet().iterator();
+		return aInvetory.iter();
 	}
 
 	public int totalPrice()
 	{
 		int total = 0;
 
-		for(Item aItem: aInventory.keySet())
+		for(Item aItem: aInventory.getObjectList() )
 		{
-			total += aItem.getPrice();
+			total = aItem.getPrice();
 		}
 		return total;		
 	}

@@ -35,8 +35,6 @@ public final class Driver
 		int total = aInv.totalValue();
 		System.out.println(total);
 
-		aInv.dispose(ITEM_CEREAL, 2);
-
 		for( Item item : ITEMS )
 		{
 			System.out.println(item.getName());

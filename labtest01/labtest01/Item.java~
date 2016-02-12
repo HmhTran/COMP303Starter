@@ -48,7 +48,7 @@ public class Item implements Comparable
 		return aPrice;
 	}
 
-	public static Comparator comparatorByPrice()
+	public Comparator comparatorByPrice()
 	{
 		return new Comparator
 		{
